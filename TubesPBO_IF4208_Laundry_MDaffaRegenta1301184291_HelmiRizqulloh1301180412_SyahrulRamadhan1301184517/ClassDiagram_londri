@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Laundry Application">
+  <ClassDiagramComponents>
+    <Class name="ControllerLogin" package="Controller" visibility="public" xPosition="3347.0" yPosition="816.0">
+      <Fields>
+        <Field name="view" type="MenuLogin" visibility="private"/>
+        <Field name="model" type="Application" visibility="package"/>
+        <Field name="CMA" type="ControllerMenuAdmin" visibility="package"/>
+        <Field name="CC" type="ControllerRegister" visibility="package"/>
+        <Field name="CMU" type="ControllerMenuKaryawan" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Application" name="model"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControllerMenuAdmin" package="Controller" visibility="public" xPosition="1817.0" yPosition="1279.0">
+      <Fields>
+        <Field name="view" type="MenuAdmin" visibility="private"/>
+        <Field name="db" type="Database" visibility="private"/>
+        <Field name="model" type="Application" visibility="package"/>
+        <Field name="CL" type="ControllerLogin" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Application" name="model"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="loadTable" returnType="void" visibility="public"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="btnTambahActionPerformed" returnType="void" visibility="public"/>
+        <Method name="btnHapusActionPerformed" returnType="void" visibility="public"/>
+        <Method name="btnUbahActionPerformed" returnType="void" visibility="public"/>
+        <Method name="btnCariActionPerformed" returnType="void" visibility="public"/>
+        <Method name="mousePressed" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="me"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControllerMenuKaryawan" package="Controller" visibility="public" xPosition="823.0" yPosition="57.0">
+      <Fields>
+        <Field name="view" type="MenuKaryawan" visibility="package"/>
+        <Field name="model" type="Application" visibility="package"/>
+        <Field name="db" type="Database" visibility="package"/>
+        <Field name="CL" type="ControllerLogin" visibility="package"/>
+        <Field name="hargaa" type="int" visibility="package"/>
+        <Field name="hargaa1" type="int" visibility="package"/>
+        <Field name="tottal" type="int" visibility="package"/>
+        <Field name="CMU" type="ControllerMenuKaryawan" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Application" name="model"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="loadTable" returnType="void" visibility="public"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="btnTambahActionPerformed" returnType="void" visibility="public"/>
+        <Method name="btnbtnHitungActionPerformed" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ControllerRegister" package="Controller" visibility="public" xPosition="2010.0" yPosition="653.0">
+      <Fields>
+        <Field name="model" type="Application" visibility="package"/>
+        <Field name="viewRegister" type="MenuRegister" visibility="package"/>
+        <Field name="db" type="Database" visibility="package"/>
+        <Field name="Cust" type="Karyawan" visibility="package"/>
+        <Field name="CL" type="ControllerLogin" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Application" name="model"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="ae"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Driver" package="Controller" visibility="public" xPosition="3676.0" yPosition="904.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Admin" package="Model" visibility="public" xPosition="2220.0" yPosition="65.0">
+      <Fields>
+        <Field name="Username" type="String" visibility="private"/>
+        <Field name="Password" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Username"/>
+          <Argument type="String" name="Password"/>
+          <Argument type="String" name="Name"/>
+          <Argument type="String" name="PhoneNumber"/>
+          <Argument type="String" name="Address"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="Username"/>
+          <Argument type="String" name="Password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUsername" returnType="String" visibility="public"/>
+        <Method name="setUsername" returnType="void" visibility="public">
+          <Argument type="String" name="Username"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="Password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Application" package="Model" visibility="public" xPosition="640.0" yPosition="891.0">
+      <Fields>
+        <Field name="db" type="Database" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="loginUser" returnType="boolean" visibility="public">
+          <Argument type="String" name="username"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="loginAdmin" returnType="boolean" visibility="public">
+          <Argument type="String" name="username"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="RegisterCostumer" returnType="void" visibility="public">
+          <Argument type="String" name="Name"/>
+          <Argument type="String" name="PhoneNumber"/>
+          <Argument type="String" name="Address"/>
+          <Argument type="String" name="Username"/>
+          <Argument type="String" name="Password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Database" package="Model" visibility="public" xPosition="1763.0" yPosition="57.0">
+      <Fields>
+        <Field name="connection" type="Connection" visibility="package"/>
+        <Field name="pesanan" type="ArrayList&lt;Pesanan&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="connect" returnType="void" visibility="public"/>
+        <Method name="disconnect" returnType="void" visibility="public"/>
+        <Method name="manipulate" returnType="boolean" visibility="public">
+          <Argument type="String" name="query"/>
+        </Method>
+        <Method name="cekDuplikatKodePesanan" returnType="boolean" visibility="public">
+          <Argument type="String" name="kode"/>
+        </Method>
+        <Method name="addPesanan" returnType="void" visibility="public">
+          <Argument type="Pesanan" name="b"/>
+        </Method>
+        <Method name="loginAdmin" returnType="boolean" visibility="public">
+          <Argument type="Admin" name="a"/>
+        </Method>
+        <Method name="loginCustomer" returnType="boolean" visibility="public">
+          <Argument type="Karyawan" name="a"/>
+        </Method>
+        <Method name="RegisterCustomer" returnType="void" visibility="public">
+          <Argument type="Karyawan" name="a"/>
+        </Method>
+        <Method name="loadBuku" returnType="void" visibility="public"/>
+        <Method name="getPesanan" returnType="ArrayList&lt;Pesanan&gt;" visibility="public"/>
+        <Method name="delPesanan" returnType="void" visibility="public">
+          <Argument type="String" name="kode"/>
+        </Method>
+        <Method name="updatePesanan" returnType="void" visibility="public">
+          <Argument type="Pesanan" name="b"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Karyawan" package="Model" visibility="public" xPosition="275.0" yPosition="581.0">
+      <Fields>
+        <Field name="Username" type="String" visibility="private"/>
+        <Field name="Password" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Name"/>
+          <Argument type="String" name="PhoneNumber"/>
+          <Argument type="String" name="Address"/>
+          <Argument type="String" name="Username"/>
+          <Argument type="String" name="Password"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="Username"/>
+          <Argument type="String" name="Password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUsername" returnType="String" visibility="public"/>
+        <Method name="setUsername" returnType="void" visibility="public">
+          <Argument type="String" name="Username"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="Password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Person" package="Model" visibility="public" isAbstract="true" xPosition="380.0" yPosition="1426.0">
+      <Fields>
+        <Field name="Name" type="String" visibility="private"/>
+        <Field name="PhoneNumber" type="String" visibility="private"/>
+        <Field name="Address" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Name"/>
+          <Argument type="String" name="PhoneNumber"/>
+          <Argument type="String" name="Address"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="Name"/>
+        </Method>
+        <Method name="getPhoneNumber" returnType="String" visibility="public"/>
+        <Method name="setPhoneNumber" returnType="void" visibility="public">
+          <Argument type="String" name="PhoneNumber"/>
+        </Method>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="setAddress" returnType="void" visibility="public">
+          <Argument type="String" name="Address"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pesanan" package="Model" visibility="public" xPosition="979.0" yPosition="1735.0">
+      <Fields>
+        <Field name="idlaundry" type="String" visibility="private"/>
+        <Field name="nama" type="String" visibility="private"/>
+        <Field name="notelp" type="String" visibility="private"/>
+        <Field name="alamat" type="String" visibility="private"/>
+        <Field name="jcucian" type="String" visibility="private"/>
+        <Field name="service" type="String" visibility="private"/>
+        <Field name="rett" type="String" visibility="private"/>
+        <Field name="berat" type="int" visibility="private"/>
+        <Field name="harga" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="idlaundry"/>
+          <Argument type="String" name="nama"/>
+          <Argument type="String" name="notelp"/>
+          <Argument type="String" name="alamat"/>
+          <Argument type="String" name="jcucian"/>
+          <Argument type="String" name="service"/>
+          <Argument type="String" name="rett"/>
+          <Argument type="int" name="berat"/>
+          <Argument type="int" name="harga"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdlaundry" returnType="String" visibility="public"/>
+        <Method name="setIdlaundry" returnType="void" visibility="public">
+          <Argument type="String" name="idlaundry"/>
+        </Method>
+        <Method name="getNama" returnType="String" visibility="public"/>
+        <Method name="setNama" returnType="void" visibility="public">
+          <Argument type="String" name="nama"/>
+        </Method>
+        <Method name="getNotelp" returnType="String" visibility="public"/>
+        <Method name="setNotelp" returnType="void" visibility="public">
+          <Argument type="String" name="notelp"/>
+        </Method>
+        <Method name="getAlamat" returnType="String" visibility="public"/>
+        <Method name="setAlamat" returnType="void" visibility="public">
+          <Argument type="String" name="alamat"/>
+        </Method>
+        <Method name="getJcucian" returnType="String" visibility="public"/>
+        <Method name="setJcucian" returnType="void" visibility="public">
+          <Argument type="String" name="jcucian"/>
+        </Method>
+        <Method name="getBerat" returnType="int" visibility="public"/>
+        <Method name="setBerat" returnType="void" visibility="public">
+          <Argument type="int" name="berat"/>
+        </Method>
+        <Method name="getHarga" returnType="int" visibility="public"/>
+        <Method name="setHarga" returnType="void" visibility="public">
+          <Argument type="int" name="harga"/>
+        </Method>
+        <Method name="getService" returnType="String" visibility="public"/>
+        <Method name="setService" returnType="void" visibility="public">
+          <Argument type="String" name="service"/>
+        </Method>
+        <Method name="getRett" returnType="String" visibility="public"/>
+        <Method name="setRett" returnType="void" visibility="public">
+          <Argument type="String" name="rett"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MenuAdmin" package="View" visibility="public" xPosition="1906.0" yPosition="1735.0">
+      <Fields>
+        <Field name="btnCari" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnDelete" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnLogOut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnReset" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnTambah" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnUpdate" type="javax.swing.JButton" visibility="private"/>
+        <Field name="category" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jAlamat" type="javax.swing.JTextArea" visibility="private"/>
+        <Field name="jBerat" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jCucian" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jDaftarpesanan" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jHarga" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jIdlaundry" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jNama" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jNotelp" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel4" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jRett" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane3" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane4" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jService" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jtbPesanan" type="javax.swing.JTable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnResetActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="categoryActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnCariActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jBeratActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jRettActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="getBtnCari" returnType="JButton" visibility="public"/>
+        <Method name="getBtnDelete" returnType="JButton" visibility="public"/>
+        <Method name="getBtnReset" returnType="JButton" visibility="public"/>
+        <Method name="getBtnTambah" returnType="JButton" visibility="public"/>
+        <Method name="getBtnUpdate" returnType="JButton" visibility="public"/>
+        <Method name="getBtnLogOut" returnType="JButton" visibility="public"/>
+        <Method name="getCategory" returnType="int" visibility="public"/>
+        <Method name="getJtbPesanan" returnType="JTable" visibility="public"/>
+        <Method name="getSelectedPesanan" returnType="int" visibility="public"/>
+        <Method name="setTbPesanan" returnType="void" visibility="public">
+          <Argument type="DefaultTableModel" name="x"/>
+        </Method>
+        <Method name="getjAlamat" returnType="String" visibility="public"/>
+        <Method name="setjAlamat" returnType="void" visibility="public">
+          <Argument type="String" name="jAlamat"/>
+        </Method>
+        <Method name="getjBerat" returnType="String" visibility="public"/>
+        <Method name="setjBerat" returnType="void" visibility="public">
+          <Argument type="String" name="jBerat"/>
+        </Method>
+        <Method name="getjDaftarpesanan" returnType="String" visibility="public"/>
+        <Method name="setjDaftarpesanan" returnType="void" visibility="public">
+          <Argument type="String" name="jDaftarpesanan"/>
+        </Method>
+        <Method name="getjHarga" returnType="String" visibility="public"/>
+        <Method name="setjHarga" returnType="void" visibility="public">
+          <Argument type="String" name="jHarga"/>
+        </Method>
+        <Method name="getjIdlaundry" returnType="String" visibility="public"/>
+        <Method name="setjIdlaundry" returnType="void" visibility="public">
+          <Argument type="String" name="jIdlaundry"/>
+        </Method>
+        <Method name="getjNama" returnType="String" visibility="public"/>
+        <Method name="setjNama" returnType="void" visibility="public">
+          <Argument type="String" name="jNama"/>
+        </Method>
+        <Method name="getjNotelp" returnType="String" visibility="public"/>
+        <Method name="setjNotelp" returnType="void" visibility="public">
+          <Argument type="String" name="jNotelp"/>
+        </Method>
+        <Method name="getjCucian" returnType="String" visibility="public"/>
+        <Method name="setjCucian" returnType="void" visibility="public">
+          <Argument type="String" name="jCucian"/>
+        </Method>
+        <Method name="getjRett" returnType="String" visibility="public"/>
+        <Method name="setjRett" returnType="void" visibility="public">
+          <Argument type="String" name="jRett"/>
+        </Method>
+        <Method name="getjService" returnType="String" visibility="public"/>
+        <Method name="setjService" returnType="void" visibility="public">
+          <Argument type="String" name="jService"/>
+        </Method>
+        <Method name="Reset" returnType="void" visibility="public"/>
+        <Method name="addActionListener" returnType="void" visibility="public">
+          <Argument type="ActionListener" name="x"/>
+        </Method>
+        <Method name="addMouseAdapter" returnType="void" visibility="public">
+          <Argument type="MouseAdapter" name="x"/>
+        </Method>
+        <Method name="showMessage" returnType="void" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="title"/>
+          <Argument type="int" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MenuKaryawan" package="View" visibility="public" xPosition="2815.0" yPosition="1279.0">
+      <Fields>
+        <Field name="FdDetail" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="btnExit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnHitung" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSubmit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="buttonGroup1" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="jAlamat" type="javax.swing.JTextArea" visibility="private"/>
+        <Field name="jDelivery" type="javax.swing.JCheckBox" visibility="private"/>
+        <Field name="jIdlaundry" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jNama" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jNotelp" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPickup" type="javax.swing.JCheckBox" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane3" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jSeparator1" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="jcbService" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jcbType" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jtbPesanan" type="javax.swing.JTable" visibility="private"/>
+        <Field name="tfBerat" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="tfTotal" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="tfTotalActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="tfBeratActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnSubmitActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="getBtnSubmit" returnType="JButton" visibility="public"/>
+        <Method name="getBtnHitung" returnType="JButton" visibility="public"/>
+        <Method name="getBtnExit" returnType="JButton" visibility="public"/>
+        <Method name="getPick" returnType="String" visibility="public"/>
+        <Method name="getService" returnType="String" visibility="public"/>
+        <Method name="getRet" returnType="String" visibility="public"/>
+        <Method name="getTfBerat" returnType="String" visibility="public"/>
+        <Method name="setTfBerat" returnType="void" visibility="public">
+          <Argument type="String" name="tfBerat"/>
+        </Method>
+        <Method name="getTfTotal" returnType="String" visibility="public"/>
+        <Method name="setTfTotal" returnType="void" visibility="public">
+          <Argument type="String" name="tfTotal"/>
+        </Method>
+        <Method name="getJtbPesanan" returnType="JTable" visibility="public"/>
+        <Method name="getjAlamat" returnType="String" visibility="public"/>
+        <Method name="setjAlamat" returnType="void" visibility="public">
+          <Argument type="String" name="jAlamat"/>
+        </Method>
+        <Method name="setjNotelp" returnType="void" visibility="public">
+          <Argument type="String" name="jNotelp"/>
+        </Method>
+        <Method name="getjIdlaundry" returnType="String" visibility="public"/>
+        <Method name="setjIdlaundry" returnType="void" visibility="public">
+          <Argument type="String" name="jIdlaundry"/>
+        </Method>
+        <Method name="getjNama" returnType="String" visibility="public"/>
+        <Method name="setjNama" returnType="void" visibility="public">
+          <Argument type="String" name="jNama"/>
+        </Method>
+        <Method name="getjNotelp" returnType="String" visibility="public"/>
+        <Method name="setTbPesanan" returnType="void" visibility="public">
+          <Argument type="DefaultTableModel" name="x"/>
+        </Method>
+        <Method name="getjLabel8" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel8" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel8"/>
+        </Method>
+        <Method name="addActionListener" returnType="void" visibility="public">
+          <Argument type="ActionListener" name="x"/>
+        </Method>
+        <Method name="showMessage" returnType="void" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="title"/>
+          <Argument type="int" name="type"/>
+        </Method>
+        <Method name="Reset" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuLogin" package="View" visibility="public" xPosition="2906.0" yPosition="65.0">
+      <Fields>
+        <Field name="db" type="Database" visibility="private"/>
+        <Field name="btnAdminLogin" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRegister" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnUserLogin" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnlogin1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jSeparator1" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="jSeparator2" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="jcPw" type="javax.swing.JCheckBox" visibility="private"/>
+        <Field name="tfLgUname" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="tfPwLogin" type="javax.swing.JPasswordField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="tfPwLoginActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jcPwActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="getBtnAdminLogin" returnType="JButton" visibility="public"/>
+        <Method name="setBtnAdminLogin" returnType="void" visibility="public">
+          <Argument type="JButton" name="btnAdminLogin"/>
+        </Method>
+        <Method name="getBtnRegister" returnType="JButton" visibility="public"/>
+        <Method name="setBtnRegister" returnType="void" visibility="public">
+          <Argument type="JButton" name="btnRegister"/>
+        </Method>
+        <Method name="getBtnUserLogin" returnType="JButton" visibility="public"/>
+        <Method name="setBtnUserLogin" returnType="void" visibility="public">
+          <Argument type="JButton" name="btnUserLogin"/>
+        </Method>
+        <Method name="getTfLgUname" returnType="String" visibility="public"/>
+        <Method name="setTfLgUname" returnType="void" visibility="public">
+          <Argument type="String" name="tfLgUname"/>
+        </Method>
+        <Method name="getTfPwLogin" returnType="String" visibility="public"/>
+        <Method name="setTfPwLogin" returnType="void" visibility="public">
+          <Argument type="String" name="tfPwLogin"/>
+        </Method>
+        <Method name="addActionListener" returnType="void" visibility="public">
+          <Argument type="ActionListener" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MenuRegister" package="View" visibility="public" xPosition="3676.0" yPosition="1091.0">
+      <Fields>
+        <Field name="btnBack" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRegis" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jSeparator1" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="tfAdr" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="tfName" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="tfPhone" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="tfPw" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="tfUname" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="tfAdrActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnBackActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="getTfNameCostumer" returnType="String" visibility="public"/>
+        <Method name="getTfPhoneNumber" returnType="String" visibility="public"/>
+        <Method name="getTfAddress" returnType="String" visibility="public"/>
+        <Method name="getTfUsername" returnType="String" visibility="public"/>
+        <Method name="getTfPassword" returnType="String" visibility="public"/>
+        <Method name="getBtnRegister" returnType="JButton" visibility="public"/>
+        <Method name="getBtnBack" returnType="JButton" visibility="public"/>
+        <Method name="addActionListener" returnType="void" visibility="public">
+          <Argument type="ActionListener" name="e"/>
+        </Method>
+        <Method name="showMessage" returnType="void" visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="String" name="title"/>
+          <Argument type="int" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="model" source="Controller.ControllerMenuAdmin" target="Model.Application" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Admin" target="Model.Person"/>
+    <HasRelation name="db" source="Controller.ControllerMenuAdmin" target="Model.Database" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Karyawan" target="Model.Person"/>
+    <HasRelation name="view" source="Controller.ControllerLogin" target="View.MenuLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="CC" source="Controller.ControllerLogin" target="Controller.ControllerRegister" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pesanan" source="Model.Database" target="Model.Pesanan" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Pesanan&gt;"/>
+    <HasRelation name="db" source="Controller.ControllerRegister" target="Model.Database" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="view" source="Controller.ControllerMenuKaryawan" target="View.MenuKaryawan" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="model" source="Controller.ControllerMenuKaryawan" target="Model.Application" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="CMU" source="Controller.ControllerMenuKaryawan" target="Controller.ControllerMenuKaryawan" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="CL" source="Controller.ControllerMenuAdmin" target="Controller.ControllerLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Database" target="Model.Pesanan" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="db" source="Model.Application" target="Model.Database" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="db" source="View.MenuLogin" target="Model.Database" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Database" target="Model.Karyawan" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="model" source="Controller.ControllerRegister" target="Model.Application" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="viewRegister" source="Controller.ControllerRegister" target="View.MenuRegister" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="view" source="Controller.ControllerMenuAdmin" target="View.MenuAdmin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="CL" source="Controller.ControllerMenuKaryawan" target="Controller.ControllerLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="CMU" source="Controller.ControllerLogin" target="Controller.ControllerMenuKaryawan" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="CL" source="Controller.ControllerRegister" target="Controller.ControllerLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Database" target="Model.Admin" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="db" source="Controller.ControllerMenuKaryawan" target="Model.Database" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="CMA" source="Controller.ControllerLogin" target="Controller.ControllerMenuAdmin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="model" source="Controller.ControllerLogin" target="Model.Application" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Cust" source="Controller.ControllerRegister" target="Model.Karyawan" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
